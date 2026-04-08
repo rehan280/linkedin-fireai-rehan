@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FireAI x Vipul - LinkedIn Playbook · Rehan Kadri</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+/* ─── ROOT: LIGHT THEME ─── */
+:root {
+  --orange:        #E84B2B;
+  --orange-light:  #FFF1EE;
+  --orange-mid:    rgba(232,75,43,0.10);
+  --orange-border: rgba(232,75,43,0.18);
+  --blue:          #2563EB;
+  --blue-light:    #EFF6FF;
+  --blue-border:   rgba(37,99,235,0.18);
+  --yellow:        #D97706;
+  --yellow-light:  #FFFBEB;
+  --yellow-border: rgba(217,119,6,0.20);
+  --green:         #059669;
+  --green-light:   #ECFDF5;
+  --green-border:  rgba(5,150,105,0.20);
+  --bg:            #FAFAFA;
+  --bg2:           #F4F4F5;
+  --bg3:           #EFEFEF;
+  --card:          #FFFFFF;
+  --border:        #E4E4E7;
+  --border2:       #EBEBEB;
+  --text:          #18181B;
+  --text2:         #3F3F46;
+  --muted:         #71717A;
+  --muted2:        #A1A1AA;
+  --white:         #FFFFFF;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: #D4D4D8; border-radius: 3px; }
+
+/* ─── COVER PAGE ─── */
+.cover {
+  min-height: 100vh;
+  background: #0F0F0F;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(232,75,43,0.15) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -80px;
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(37,99,235,0.10) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cover-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; z-index: 2;
+}
+.cover-logo {
+  display: flex; align-items: center; gap: 10px;
+}
+.cover-logo-mark {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 900; color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+.cover-logo-name {
+  font-size: 15px; font-weight: 700; color: #fff;
+  letter-spacing: -0.01em;
+}
+.cover-logo-name span { color: var(--orange); }
+.cover-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px; color: #666;
+  letter-spacing: 0.08em;
+}
+.cover-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 0 40px;
+  position: relative; z-index: 2;
+}
+.cover-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px; font-weight: 500;
+  color: var(--orange); letter-spacing: 0.14em;
+  text-transform: uppercase; margin-bottom: 28px;
+  display: flex; align-items: center; gap: 10px;
+}
+.cover-eyebrow::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--orange); display: inline-block;
+}
+.cover-title {
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 1.02;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.cover-title em { font-style: normal; color: var(--orange); }
+.cover-sub-title {
+  font-size: 20px;
+  font-weight: 300;
+  color: #888;
+  margin-bottom: 48px;
+  letter-spacing: -0.01em;
+}
+.cover-stats {
+  display: flex; gap: 48px;
+  border-top: 1px solid #222;
+  padding-top: 32px;
+  flex-wrap: wrap;
+}
+.cs-item { display: flex; flex-direction: column; gap: 4px; }
+.cs-num {
+  font-size: 36px; font-weight: 900;
+  color: var(--orange); line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.cs-lbl {
+  font-size: 11px; color: #555;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.cover-bottom {
+  display: flex; align-items: flex-end;
+  justify-content: space-between;
+  position: relative; z-index: 2;
+  flex-wrap: wrap; gap: 20px;
+}
+.cover-author {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.cover-author .ca-made {
+  font-size: 10px; color: #444;
+  text-transform: uppercase; letter-spacing: 0.1em;
+}
+.cover-author .ca-name {
+  font-size: 22px; font-weight: 800;
+  color: #fff; letter-spacing: -0.01em;
+}
+.cover-author .ca-role {
+  font-size: 12px; color: #555;
+}
+.cover-badges {
+  display: flex; flex-direction: column;
+  align-items: flex-end; gap: 8px;
+}
+.cv-badge {
+  font-size: 10px; font-weight: 600;
+  padding: 4px 12px; border-radius: 100px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.cvb-o { background: rgba(232,75,43,0.15); border: 1px solid rgba(232,75,43,0.25); color: #ff7a5c; }
+.cvb-g { background: rgba(5,150,105,0.12); border: 1px solid rgba(5,150,105,0.25); color: #34d399; }
+.cvb-b { background: rgba(37,99,235,0.12); border: 1px solid rgba(37,99,235,0.25); color: #60a5fa; }
+
+/* ─── WATERMARK REMOVED ─── */
+
+/* ─── TOP BAR ─── */
+.top-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 9px 40px;
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; gap: 8px;
+}
+.tb-left { display: flex; gap: 18px; flex-wrap: wrap; }
+.tb-left span { display: flex; align-items: center; gap: 5px; }
+.dot { width: 5px; height: 5px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.dg { background: var(--green); }
+.do { background: var(--orange); }
+.vtag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px; color: var(--orange);
+  border: 1px solid var(--orange-border);
+  padding: 2px 8px; border-radius: 3px;
+  background: var(--orange-light);
+}
+
+/* ─── NAV ─── */
+.nav {
+  position: sticky; top: 0; z-index: 99;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+.nav-inner {
+  max-width: 860px; margin: 0 auto;
+  padding: 0 40px; display: flex;
+}
+.nav-inner a {
+  display: inline-block; padding: 13px 13px;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.nav-inner a:hover { color: var(--text); border-bottom-color: var(--orange); }
+.nav-inner a.yn { color: var(--yellow); }
+.nav-inner a.yn:hover { border-bottom-color: var(--yellow); }
+
+/* ─── MAIN ─── */
+.main { max-width: 860px; margin: 0 auto; padding: 0 40px 100px; }
+
+/* ─── HOOK ANALYSIS ─── */
+.hook-block {
+  margin: 52px 0 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 30px;
+}
+.hook-block h2 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.hook-block .hb-sub { font-size: 12.5px; color: var(--muted); margin-bottom: 22px; }
+.hook-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.hk-card {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 8px; padding: 14px;
+}
+.hk-type {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px; font-weight: 600;
+  color: var(--orange); text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 7px;
+}
+.hk-ex {
+  font-size: 12.5px; color: var(--text);
+  line-height: 1.4; font-weight: 600;
+  font-style: italic; margin-bottom: 7px;
+}
+.hk-why { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+/* ─── DAY SECTION ─── */
+.day-sec { margin: 52px 0; }
+.day-hdr {
+  display: flex; align-items: flex-end; gap: 14px;
+  margin-bottom: 24px; padding-bottom: 14px;
+  border-bottom: 2px solid var(--border);
+}
+.day-n {
+  font-size: 50px; font-weight: 900;
+  color: var(--orange); line-height: 1;
+  min-width: 60px; letter-spacing: -0.03em;
+}
+.day-n.yn { color: var(--yellow); }
+.day-info h2 { font-size: 17px; font-weight: 700; color: var(--text); }
+.day-info p { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* ─── DIVIDER ─── */
+hr.dv { border: none; border-top: 1px solid var(--border); margin: 44px 0; }
+
+/* ─── POST CARD ─── */
+.pc {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: var(--white);
+  transition: box-shadow 0.18s, border-color 0.18s;
+}
+.pc:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.07); border-color: rgba(232,75,43,0.22); }
+.pc.blue:hover { border-color: rgba(37,99,235,0.25); }
+.pc.yellow { border-color: rgba(217,119,6,0.20); }
+.pc.yellow:hover { border-color: rgba(217,119,6,0.40); }
+
+.pc-top {
+  padding: 12px 20px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; gap: 8px;
+}
+.pc-meta { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+.pc-time { font-size: 11px; color: var(--muted); }
+
+.tag {
+  font-size: 9px; font-weight: 700;
+  padding: 3px 7px; border-radius: 3px;
+  text-transform: uppercase; letter-spacing: 0.07em;
+}
+.tv { background: var(--orange-light); border: 1px solid var(--orange-border); color: var(--orange); }
+.tf { background: var(--blue-light); border: 1px solid var(--blue-border); color: var(--blue); }
+.ty { background: var(--yellow-light); border: 1px solid var(--yellow-border); color: var(--yellow); }
+.fp {
+  font-size: 10px; padding: 3px 7px; border-radius: 3px;
+  background: var(--bg3); color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.pc-body { padding: 20px 20px 0; }
+
+/* ─── VIPUL IMAGE SUGGESTION ─── */
+.vipul-img-suggestion {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--orange-light);
+  border: 1px dashed var(--orange-border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+.vis-photo {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), #ff8c6d);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 900; color: #fff;
+  flex-shrink: 0; font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+.vis-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.vis-content { flex: 1; }
+.vis-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px; font-weight: 600;
+  color: var(--orange); text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 5px;
+}
+.vis-rec { font-size: 12.5px; color: var(--text2); line-height: 1.5; font-weight: 500; }
+.vis-note { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+
+/* ─── HOOK LABEL ─── */
+.hlbl {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px; font-weight: 500;
+  color: var(--orange); letter-spacing: 0.12em;
+  text-transform: uppercase; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 5px;
+}
+.hlbl.hb { color: var(--blue); }
+.hlbl.hy { color: var(--yellow); }
+.hlbl::before { content: 'HOOK:'; margin-right: 2px; }
+
+/* ─── LI MOCKUP ─── */
+.lm {
+  background: #F8FAFC;
+  border: 1px solid #DDE4EE;
+  border-radius: 10px; overflow: hidden;
+  max-width: 480px; margin-bottom: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.lm-top { padding: 12px 14px 8px; display: flex; align-items: flex-start; gap: 10px; }
+.lm-av {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; color: #fff;
+  flex-shrink: 0; overflow: hidden;
+}
+.av-v { background: linear-gradient(135deg, var(--orange), #ff8c6d); }
+.av-f { background: linear-gradient(135deg, var(--blue), #6aabf0); }
+.lm-av img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.lm-nm { font-size: 13px; font-weight: 600; color: #1a1a2e; line-height: 1.2; }
+.lm-rl { font-size: 11px; color: #888; margin-top: 1px; }
+.lm-ti { font-size: 11px; color: #aaa; margin-left: auto; flex-shrink: 0; }
+.lm-body {
+  padding: 0 14px 12px;
+  font-size: 13px; line-height: 1.72;
+  color: #333; white-space: pre-wrap;
+}
+.lm-sm { color: var(--blue); cursor: pointer; }
+.lm-bar {
+  border-top: 1px solid #DDE4EE;
+  padding: 6px 14px;
+  display: flex; gap: 2px;
+  background: #fff;
+}
+.lm-btn {
+  flex: 1; padding: 7px 4px;
+  display: flex; align-items: center; justify-content: center; gap: 4px;
+  font-size: 11px; color: #777; border-radius: 4px; cursor: pointer;
+}
+.lm-btn:hover { background: #f0f0f0; }
+
+/* ─── COPY BLOCK ─── */
+.copy {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  font-size: 13.5px; line-height: 1.82;
+  color: var(--text2); white-space: pre-wrap;
+  margin-bottom: 14px; position: relative;
+}
+.copy::before {
+  content: 'POST COPY - PASTE READY';
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px; font-weight: 600;
+  color: var(--muted2); letter-spacing: 0.14em;
+  margin-bottom: 12px; padding-bottom: 9px;
+  border-bottom: 1px solid var(--border2);
+}
+.raw-note {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--yellow-light); border: 1px solid var(--yellow-border);
+  color: var(--yellow); font-size: 9px; font-weight: 600;
+  padding: 2px 8px; border-radius: 3px; margin-bottom: 10px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ─── BRIEF ─── */
+.brief {
+  padding: 12px 14px; border-radius: 7px; margin-bottom: 12px;
+}
+.bro { background: var(--orange-light); border: 1px solid var(--orange-border); }
+.brb { background: var(--blue-light); border: 1px solid var(--blue-border); }
+.bry { background: var(--yellow-light); border: 1px solid var(--yellow-border); }
+.brief h4 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.bro h4 { color: var(--orange); }
+.brb h4 { color: var(--blue); }
+.bry h4 { color: var(--yellow); }
+.brief ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.brief li {
+  font-size: 12px; color: var(--text2);
+  padding-left: 13px; position: relative; line-height: 1.5;
+}
+.brief li::before { content: '→'; position: absolute; left: 0; font-size: 10px; }
+.bro li::before { color: var(--orange); }
+.brb li::before { color: var(--blue); }
+.bry li::before { color: var(--yellow); }
+.htags { font-size: 11px; color: var(--muted); margin-top: 8px; }
+.ht { font-weight: 600; }
+.bro .ht { color: var(--orange); }
+.brb .ht { color: var(--blue); }
+.bry .ht { color: var(--yellow); }
+
+/* ─── FC LINE ─── */
+.fc {
+  display: flex; align-items: flex-start; gap: 7px;
+  font-size: 11.5px; border-radius: 6px;
+  padding: 8px 12px; margin-bottom: 12px; line-height: 1.5;
+}
+.fco { background: var(--orange-light); border: 1px dashed var(--orange-border); color: var(--orange); }
+.fcb { background: var(--blue-light); border: 1px dashed var(--blue-border); color: var(--blue); }
+.fcy { background: var(--yellow-light); border: 1px dashed var(--yellow-border); color: var(--yellow); }
+.fc::before { content: '💬'; font-size: 12px; flex-shrink: 0; }
+
+.pc-foot { padding: 0 20px 16px; }
+
+/* ─── CAROUSEL SPEC ─── */
+.cs { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 12px 0; }
+.cs-row {
+  display: grid; grid-template-columns: 34px 1fr 170px;
+  border-bottom: 1px solid var(--border2); font-size: 12px;
+}
+.cs-row:last-child { border-bottom: none; }
+.cs-row.csh {
+  background: var(--bg2);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px; font-weight: 600;
+  color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;
+}
+.cs-cell { padding: 9px 11px; color: var(--text2); line-height: 1.4; }
+.cs-cell:first-child {
+  font-weight: 700; font-size: 12px;
+  text-align: center;
+  border-right: 1px solid var(--border2);
+}
+.cs-cell.vis { color: var(--muted); font-size: 11px; border-left: 1px solid var(--border2); }
+.cso .cs-cell:first-child { color: var(--orange); }
+.csb .cs-cell:first-child { color: var(--blue); }
+.csy .cs-cell:first-child { color: var(--yellow); }
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 40px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--white);
+}
+footer strong { color: var(--orange); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 700px) {
+  .cover { padding: 36px 24px; }
+  .hero, .main { padding-left: 18px; padding-right: 18px; }
+  .nav-inner { padding: 0 18px; }
+  .top-bar { padding: 8px 18px; }
+  .hook-grid { grid-template-columns: 1fr; }
+  .cs-row { grid-template-columns: 34px 1fr; }
+  .cs-cell.vis { display: none; }
+  footer { padding: 20px 18px; }
+  .cover-stats { gap: 24px; }
+  .cover-title { font-size: 38px; }
+}
+</style>
+</head>
+<body>
+<!-- ═══════════════════════════════════════════
+     COVER PAGE
+═══════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════ -->
+<nav class="nav">
+<div class="nav-inner">
+<a href="#hooks">Hooks</a>
+<a href="#day1">Mon</a>
+<a href="#day2">Tue</a>
+<a href="#day3">Wed</a>
+<a href="#day4">Thu</a>
+<a href="#day5">Fri</a>
+<a href="#day6">Sat</a>
+<a href="#day7">Sun</a>
+<a class="yn" href="#viral">Viral</a>
+</div>
+</nav>
+<!-- ═══════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════ -->
+<main class="main">
+<div id="simple-cover" style="background: #0F0F0F; padding: 60px 40px; text-align: center; border-radius: 12px; margin-bottom: 40px; position: relative; overflow: hidden;">
+<h1 style="font-size: 36px; font-weight: 900; color: #FFFFFF; letter-spacing: -0.02em; margin-bottom: 12px;">FireAI <span style="color: var(--orange);">x</span> Vipul</h1>
+<p style="font-size: 18px; color: #A1A1AA; font-weight: 500; font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: 0.1em;">LinkedIn Strategy - Rehan Kadri</p>
+</div>
+
+<!-- HOOK ANALYSIS -->
+<div class="hook-block" id="summary">
+<h2>7-Day Content Summary</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; text-align: left;">
+<thead>
+<tr style="border-bottom: 2px solid var(--border); background: var(--bg2);">
+<th style="padding: 10px;">Day</th>
+<th style="padding: 10px;">Time</th>
+<th style="padding: 10px;">Format</th>
+</tr>
+</thead>
+<tbody id="summary_tbody">
+<tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Monday</td><td style="padding: 10px;">8:00 AM IST</td><td style="padding: 10px; color: var(--muted);">Founder Confession · Story Post</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Monday</td><td style="padding: 10px;">12:00 PM IST</td><td style="padding: 10px; color: var(--muted);">Carousel PDF · 10 Slides</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Tuesday</td><td style="padding: 10px;">8:30 AM IST</td><td style="padding: 10px; color: var(--muted);">Contrarian Hot Take</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Tuesday</td><td style="padding: 10px;">1:00 PM IST</td><td style="padding: 10px; color: var(--muted);">Branded Image · Social Proof</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Wednesday</td><td style="padding: 10px;">8:00 AM IST</td><td style="padding: 10px; color: var(--muted);">Carousel PDF · 8 Slides</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Thursday</td><td style="padding: 10px;">8:00 AM IST</td><td style="padding: 10px; color: var(--muted);">Opinion · Buyer Psychology</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Thursday</td><td style="padding: 10px;">11:00 AM IST</td><td style="padding: 10px; color: var(--muted);">Carousel PDF · 9 Slides</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Friday</td><td style="padding: 10px;">8:00 AM IST</td><td style="padding: 10px; color: var(--muted);">Build in Public · Text</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Friday</td><td style="padding: 10px;">2:00 PM IST</td><td style="padding: 10px; color: var(--muted);">Branded Stat Image</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Saturday</td><td style="padding: 10px;">9:00 AM IST</td><td style="padding: 10px; color: var(--muted);">Founder Story · Failure Post</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Saturday</td><td style="padding: 10px;">11:00 AM IST</td><td style="padding: 10px; color: var(--muted);">Native Vertical Video · 60 sec</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Sunday</td><td style="padding: 10px;">10:00 AM IST</td><td style="padding: 10px; color: var(--muted);">Engagement · Question Post</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Sunday</td><td style="padding: 10px;">7:00 PM IST</td><td style="padding: 10px; color: var(--muted);">Pre-Announcement · Short Text</td></tr><tr style="border-bottom: 1px solid var(--border2);"><td style="padding: 10px; font-weight: bold;">Tuesday</td><td style="padding: 10px;">8:30 AM IST</td><td style="padding: 10px; color: var(--muted);">Carousel PDF · 10 Slides</td></tr></tbody>
+</table>
+</div>
+<hr class="dv"/>
+<!-- ══════════════ DAY 1: MONDAY ══════════════ -->
+<section class="day-sec" id="day1">
+<div class="day-hdr">
+<div class="day-n">01</div>
+<div class="day-info">
+<h2>Monday - Foundation Day</h2>
+<p>Credibility from post one. Founder confession at 8am + BI buyer carousel at 12pm.</p>
+</div>
+</div>
+<!-- POST 1 -->
+<div class="pc">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tv">Vipul Personal</span>
+<span class="fp">Founder Confession · Story Post</span>
+</div>
+<span class="pc-time">Monday · 8:00 AM IST</span>
+</div>
+<div class="pc-body">
+<div class="vipul-img-suggestion" style="display: flex; align-items: flex-start; gap: 12px; background: var(--orange-light); border: 1px dashed var(--orange-border); border-radius: 8px; padding: 12px 14px; margin-bottom: 16px;">
+<div class="vis-photo" style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), #ff8c6d); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 900; color: #fff; flex-shrink: 0; font-family: 'Inter', sans-serif; overflow: hidden;">V</div>
+<div class="vis-content" style="flex: 1;">
+<div class="vis-label" style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px;">Optional Media Suggestion</div>
+<div class="vis-rec" style="font-size: 12.5px; color: var(--text2); line-height: 1.5; font-weight: 500;">Include a personal photo of Vipul (e.g., at the office, candid, or at a whiteboard).</div>
+<div class="vis-note" style="font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4;">Why? Confession and story posts pair best with a human face. It builds trust and significantly boosts engagement on personal accounts.</div>
+</div>
+</div>
+
+<!-- VIPUL IMAGE SUGGESTION -->
+<div class="copy">I made a mistake that almost killed FireAI.
+
+Month 3. I checked our retention.
+
+34%.
+
+Two out of every three clients had stopped opening the app after 90 days.
+
+Not because the product was broken.
+
+Because I had sold the demo. Not the daily habit.
+
+Clients would use FireAI hard for two weeks. Then go back to Excel. Not because Excel was better. Because nobody told them what to open FireAI for every single morning.
+
+So we stopped all sales for 30 days.
+
+Rebuilt the entire onboarding around one question: what is the ONE number each client needs to see before 10 AM?
+
+We answered that for every client in week one.
+
+Retention went from 34% to 87% in 60 days.
+
+The lesson nobody tells you about SaaS:
+
+You don't lose clients when the product is bad.
+
+You lose them when you never taught them the daily habit.
+
+The best BI tool in the world is the one people open before they check their phone.
+
+Are you tracking retention, or are you only tracking signups?</div>
+<div class="brief bro">
+<h4>Image/Media Details</h4>
+<ul><li>If using a photo, ensure it matches the vulnerable/honest tone of the post. No polished studio shots.</li></ul></div>
+</div>
+<div class="pc-foot"></div>
+</div>
+<!-- POST 2 -->
+<div class="pc blue">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tf">FireAI Page</span>
+<span class="fp">Carousel PDF · 10 Slides</span>
+</div>
+<span class="pc-time">Monday · 12:00 PM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy">Stop. Before your next BI tool demo.
+
+Ask these 7 questions first.
+
+Most Indian businesses buy the wrong tool not because they didn't research. Because they walked in asking about features instead of asking about fit.
+
+Swipe through. Question 5 is the one no vendor wants you to ask.
+
+Save this. You will need it.</div>
+<div class="cs">
+<div class="cs-row csh"><div class="cs-cell">#</div><div class="cs-cell">Slide Content</div><div class="cs-cell vis">Visual Direction</div></div>
+<div class="cs-row csb"><div class="cs-cell">1</div><div class="cs-cell">Cover: "Before your next BI demo. Ask these 7 questions."</div><div class="cs-cell vis">Orange bg, white bold headline. No logo on cover. Hook only.</div></div>
+<div class="cs-row csb"><div class="cs-cell">2</div><div class="cs-cell">Q1: Does it connect to Tally? If no, stop the demo right there.</div><div class="cs-cell vis">Dark bg, large blue Q-number, white text, 2-line grey answer</div></div>
+<div class="cs-row csb"><div class="cs-cell">3</div><div class="cs-cell">Q2: Can a non-technical person use it on day one, zero training?</div><div class="cs-cell vis">Simple illustration, non-tech person at laptop</div></div>
+<div class="cs-row csb"><div class="cs-cell">4</div><div class="cs-cell">Q3: Show me real-time data right now. Not a recording. Live.</div><div class="cs-cell vis">Split: "What they show" vs "What you need to demand"</div></div>
+<div class="cs-row csb"><div class="cs-cell">5</div><div class="cs-cell">Q4: What is the actual go-live timeline? Put it in writing today.</div><div class="cs-cell vis">Timeline bar: 1 week vs 3 months, colour-coded</div></div>
+<div class="cs-row csb"><div class="cs-cell">6</div><div class="cs-cell">Q5 (the one they hate): Can it tell me WHY a metric moved, not just that it moved?</div><div class="cs-cell vis">ORANGE background, white bold text. FireAI differentiator slide.</div></div>
+<div class="cs-row csb"><div class="cs-cell">7</div><div class="cs-cell">Q6: Does it send WhatsApp alerts? Your team won't open a dashboard.</div><div class="cs-cell vis">Phone screen showing WhatsApp alert notification</div></div>
+<div class="cs-row csb"><div class="cs-cell">8</div><div class="cs-cell">Q7: Run the demo on MY actual data. Not sample data.</div><div class="cs-cell vis">Side by side: sample data demo vs live data demo</div></div>
+<div class="cs-row csb"><div class="cs-cell">9</div><div class="cs-cell">All 7 as a checklist. Screenshot this before your next vendor call.</div><div class="cs-cell vis">Clean checklist, orange ticks, light bg, "screenshot-ready" label</div></div>
+<div class="cs-row csb"><div class="cs-cell">10</div><div class="cs-cell">CTA: "FireAI answers all 7 from day one. Book a free 20-min demo."</div><div class="cs-cell vis">Orange bg, white bold CTA, link arrow visual</div></div>
+</div>
+<div class="brief brb">
+<h4>Image/Media Details</h4>
+<ul>
+<li>PDF carousel: 10 slides at 1080x1080px, one file, native LinkedIn document upload.</li>
+<li>Colors: bg #0D0D0D, headlines #FFFFFF, accent #FF5A36. Slide 6 gets full orange bg.</li>
+<li>FireAI logo small, bottom-right, on every slide except the cover.</li>
+</ul>
+</div>
+</div>
+<div class="pc-foot"></div>
+</div>
+</section>
+<hr class="dv"/>
+<!-- ══════════════ DAY 2: TUESDAY ══════════════ -->
+<section class="day-sec" id="day2">
+<div class="day-hdr">
+<div class="day-n">02</div>
+<div class="day-info">
+<h2>Tuesday - Hot Take + Social Proof</h2>
+<p>Contrarian that earns shares at 8:30am. FabAlley win at 1pm.</p>
+</div>
+</div>
+<!-- POST 3 -->
+<div class="pc">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tv">Vipul Personal</span>
+<span class="fp">Contrarian Hot Take</span>
+</div>
+<span class="pc-time">Tuesday · 8:30 AM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy raw-copy">
+
+Your BI tool is not the problem.
+
+You are.
+
+I know that's harsh. But after 200+ conversations with Indian founders, the pattern is always the same.
+
+They blame the tool. The tool is fine.
+
+The problem is you're making 10-crore decisions from a spreadsheet nobody updated since Thursday.
+
+I watched a D2C founder burn 3 months of runway because their stock data was 4 days behind their sales data.
+
+Excel didn't fail them.
+
+Their process did.
+
+Here's what actually kills businesses:
+
+The gap between the question and the answer.
+
+"What's my net margin per SKU this week?"
+
+If that takes 4 hours, that is the problem. not the tool.
+
+Fix the process first. Then pick the tool.
+
+Connect every data source. Make the numbers live. Make answers available in 30 seconds.
+
+That's a process upgrade, not a technology upgrade.
+
+What is the most expensive question your team takes too long to answer?</div>
+
+</div>
+<div class="pc-foot"></div>
+</div>
+<!-- POST 4 -->
+<div class="pc blue">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tf">FireAI Page</span>
+<span class="fp">Branded Image · Social Proof</span>
+</div>
+<span class="pc-time">Tuesday · 1:00 PM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy">6 hours. Every Monday.
+
+That's what FabAlley's team spent building weekly reports before FireAI.
+
+Now it takes 4 minutes.
+
+Same team. No new hires. No data analyst.
+
+They connected FireAI on a Friday. Asked their first question that afternoon.
+
+By Monday morning, the report was already done.
+
+What is your Monday morning report costing your team?</div>
+<div class="brief brb">
+<h4>Image/Media Details</h4>
+<ul>
+<li>Branded image: 1200x628px landscape. Left: dark bg with "6 hours. Now 4 minutes." in large white/orange type.</li>
+<li>Right half: FabAlley logo + one-line quote. Get written approval first.</li>
+<li>Bottom: FireAI logo + "Real clients. Real results." The number is the visual. Nothing else.</li>
+</ul>
+</div>
+</div>
+<div class="pc-foot"></div>
+</div>
+</section>
+<hr class="dv"/>
+<!-- ══════════════ DAY 3: WEDNESDAY ══════════════ -->
+<section class="day-sec" id="day3">
+<div class="day-hdr">
+<div class="day-n">03</div>
+<div class="day-info">
+<h2>Wednesday - Education Day</h2>
+<p>Teach something genuinely useful. Maximum saves and shares.</p>
+</div>
+</div>
+<!-- POST 5 -->
+<div class="pc">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tv">Vipul Personal</span>
+<span class="fp">Carousel PDF · 8 Slides</span>
+</div>
+<span class="pc-time">Wednesday · 8:00 AM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy">Most people open a business dashboard and freeze.
+
+Too many numbers. No idea where to start.
+
+After working with 200+ Indian businesses, I found the exact method our best users follow every morning.
+
+It takes 2 minutes. Swipe through.
+
+Slide 6 is the one most people skip.
+
+It's also the reason most BI tools are actually just expensive report generators.</div>
+<div class="cs">
+<div class="cs-row csh"><div class="cs-cell">#</div><div class="cs-cell">Slide Content</div><div class="cs-cell vis">Visual Direction</div></div>
+<div class="cs-row cso"><div class="cs-cell">1</div><div class="cs-cell">Cover: "Most people read dashboards wrong. Here's the 2-minute fix."</div><div class="cs-cell vis">Dark bg, white bold headline, orange underline. FireAI logo bottom-right, small.</div></div>
+<div class="cs-row cso"><div class="cs-cell">2</div><div class="cs-cell">Step 1: Find your north star. One number. What makes today good or bad?</div><div class="cs-cell vis">Single metric mockup with orange highlight box</div></div>
+<div class="cs-row cso"><div class="cs-cell">3</div><div class="cs-cell">Step 2: Go to red numbers first, not green. Red is where decisions live.</div><div class="cs-cell vis">Dashboard mockup, red metrics circled in orange</div></div>
+<div class="cs-row cso"><div class="cs-cell">4</div><div class="cs-cell">Step 3: Don't stop at WHAT changed. Ask WHY it changed. Context is everything.</div><div class="cs-cell vis">Arrow diagram: surface metric pointing down to root cause</div></div>
+<div class="cs-row cso"><div class="cs-cell">5</div><div class="cs-cell">Step 4: Compare three windows: yesterday, last week, last month. One window lies.</div><div class="cs-cell vis">3-column comparison table, clean, readable</div></div>
+<div class="cs-row cso"><div class="cs-cell">6</div><div class="cs-cell">Step 5 (the one people skip): If your tool shows WHAT but can't explain WHY, it's a reporting tool. Not analytics.</div><div class="cs-cell vis">ORANGE background, white bold text. This is the hero slide.</div></div>
+<div class="cs-row cso"><div class="cs-cell">7</div><div class="cs-cell">Step 6: Pick ONE action. Write it down. One decision per dashboard session.</div><div class="cs-cell vis">Clean action card, single item highlighted in orange</div></div>
+<div class="cs-row cso"><div class="cs-cell">8</div><div class="cs-cell">CTA: "FireAI does all 6 for you. Plain English. Book a 20-min demo. Comment 'AUDIT' for the checklist."</div><div class="cs-cell vis">Orange gradient bg, white text, strong CTA</div></div>
+</div>
+<div class="brief bro">
+<h4>Image/Media Details</h4>
+<ul>
+<li>PDF carousel: 8 slides at 1080x1080px, one native PDF. Never separate images.</li>
+</ul>
+</div>
+</div>
+<div class="pc-foot"></div>
+</div>
+</section>
+<hr class="dv"/>
+<!-- ══════════════ DAY 4: THURSDAY ══════════════ -->
+<section class="day-sec" id="day4">
+<div class="day-hdr">
+<div class="day-n">04</div>
+<div class="day-info">
+<h2>Thursday - Authority Day</h2>
+<p>Buyer psychology from Vipul at 8am. Product depth from FireAI at 11am.</p>
+</div>
+</div>
+<!-- POST 6 -->
+<div class="pc">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tv">Vipul Personal</span>
+<span class="fp">Opinion · Buyer Psychology</span>
+</div>
+<span class="pc-time">Thursday · 8:00 AM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy">Indian CFOs don't buy software.
+
+They buy answers to three questions they never ask out loud.
+
+I learned this the hard way after losing a 14 lakh deal in 2022. I showed up with a feature list. She had three questions I wasn't ready for.
+
+Here they are.
+
+Question 1: Does this vendor understand MY business?
+
+Not Indian SMBs in general. Mine. My Tally setup. My 12-person ops team. My board meeting in 6 weeks.
+
+Question 2: Does this connect to what I actually have?
+
+Not what a San Francisco startup assumes I have. I have Tally. Maybe Zoho. Definitely Excel.
+
+Question 3: Will this work before my next board meeting?
+
+Or is this another 6-month implementation that exists only in the contract?
+
+Price comes up. But no CFO has ever told me they bought the wrong tool because it was expensive.
+
+They bought the wrong tool because they chased features and missed fit.
+
+Fit beats features. Every single time.
+
+Which of these three questions do you ask first?</div>
+
+</div>
+<div class="pc-foot"></div>
+</div>
+<!-- POST 7 -->
+<div class="pc blue">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tf">FireAI Page</span>
+<span class="fp">Carousel PDF · 9 Slides</span>
+</div>
+<span class="pc-time">Thursday · 11:00 AM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy">Power BI shows you THAT revenue dropped.
+
+It doesn't tell you why.
+
+Neither does Tableau. Or Looker. Or Qlik.
+
+They all show you the number. Not the reason.
+
+FireAI Causal Chain is the only feature that maps root cause automatically. In plain English. In under 60 seconds.
+
+Here's exactly how it works. Swipe through.</div>
+<div class="cs">
+<div class="cs-row csh"><div class="cs-cell">#</div><div class="cs-cell">Slide Content</div><div class="cs-cell vis">Visual Direction</div></div>
+<div class="cs-row csb"><div class="cs-cell">1</div><div class="cs-cell">Cover: "Your BI tool shows you the number. FireAI tells you why."</div><div class="cs-cell vis">Dark bg, white bold text. Downward arrow in background. Minimal.</div></div>
+<div class="cs-row csb"><div class="cs-cell">2</div><div class="cs-cell">The old way: 3 days. One analyst. One massive Excel file. One incomplete answer.</div><div class="cs-cell vis">Split: tired analyst left, massive spreadsheet right</div></div>
+<div class="cs-row csb"><div class="cs-cell">3</div><div class="cs-cell">"Why did our revenue drop 40L this quarter?" The question that kills every Monday morning.</div><div class="cs-cell vis">Single bold question. Full bleed. Let it breathe.</div></div>
+<div class="cs-row csb"><div class="cs-cell">4</div><div class="cs-cell">Causal Chain maps the full cause-and-effect automatically. No SQL. No analyst. 60 seconds.</div><div class="cs-cell vis">Product mockup of causal chain diagram, connected orange nodes</div></div>
+<div class="cs-row csb"><div class="cs-cell">5</div><div class="cs-cell">Live example: Revenue drop traced to SKU margin issue, then 2 high-return products, then one logistics partner.</div><div class="cs-cell vis">Step-by-step causal chain, orange and white, clean connected arrows</div></div>
+<div class="cs-row csb"><div class="cs-cell">6</div><div class="cs-cell">Every step explained in plain English. No jargon. No waiting. No guessing.</div><div class="cs-cell vis">Product UI screenshot, natural-language explanation visible</div></div>
+<div class="cs-row csb"><div class="cs-cell">7</div><div class="cs-cell">The gap: Power BI, Tableau, Looker, Qlik. None have automated root-cause analysis.</div><div class="cs-cell vis">5-column comparison table. FireAI column highlighted in orange.</div></div>
+<div class="cs-row csb"><div class="cs-cell">8</div><div class="cs-cell">One FireAI client found 12L in recoverable margin in week one using Causal Chain.</div><div class="cs-cell vis">Large orange stat callout on dark bg. One number only.</div></div>
+<div class="cs-row csb"><div class="cs-cell">9</div><div class="cs-cell">CTA: "See Causal Chain on your own data. Free 20-min demo. Link in first comment."</div><div class="cs-cell vis">Orange bg, white text, strong CTA, link arrow right</div></div>
+</div>
+<div class="brief brb">
+<h4>Image/Media Details</h4>
+<ul>
+<li>PDF carousel: 9 slides at 1080x1080px, single native PDF. Never separate images.</li>
+<li>Mix dark informational slides with lighter product UI mockup slides for visual variety.</li>
+</ul>
+</div>
+</div>
+<div class="pc-foot"></div>
+</div>
+</section>
+<hr class="dv"/>
+<!-- ══════════════ DAY 5: FRIDAY ══════════════ -->
+<section class="day-sec" id="day5">
+<div class="day-hdr">
+<div class="day-n">05</div>
+<div class="day-info">
+<h2>Friday - Build in Public + Hard Stat</h2>
+<p>Raw founder moment at 8am. Hard number from FireAI page at 2pm.</p>
+</div>
+</div>
+<!-- POST 8 -->
+<div class="pc">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tv">Vipul Personal</span>
+<span class="fp">Build in Public · Text</span>
+</div>
+<span class="pc-time">Friday · 8:00 AM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy raw-copy">
+
+We shipped something this week I've been thinking about for 2 years.
+
+Multilingual voice queries. Ask FireAI a business question in Hindi, Marathi, or Tamil. Get the answer back in the same language.
+
+Here's what actually surprised us during the build.
+
+The hardest part wasn't the language model.
+
+It was business intent.
+
+"Bikri kaisi hai?" means different things to a D2C founder, a distributor, and a logistics manager.
+
+Same words. Completely different questions.
+
+Our first demo with a Marathi-speaking distributor in Pune ran 40 minutes. Not because the product was slow.
+
+Because the guy had 20 questions the moment he realized he could just ask.
+
+No English. No analyst. No waiting.
+
+That's the unlock for tier-2 India. Not features. Not pricing. Language.
+
+We've been building for India's data problems. But we were still assuming India thinks in English.
+
+We were wrong.
+
+What feature would actually change how your team uses data every day?</div>
+
+</div>
+<div class="pc-foot"></div>
+</div>
+<!-- POST 9 -->
+<div class="pc blue">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tf">FireAI Page</span>
+<span class="fp">Branded Stat Image</span>
+</div>
+<span class="pc-time">Friday · 2:00 PM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy">11 hours.
+
+That's how much time the average Indian business team spends on reporting every single week.
+
+572 hours a year. Per team.
+
+FireAI clients cut that by 80% in their first 30 days.
+
+That's 458 hours back. Per team. Per year.
+
+Our clients tell us what they do with those hours: they sell more, they fix problems faster, and a few of them just go home on time for the first time in years.
+
+What would your team do with 458 more hours?</div>
+<div class="brief brb">
+<h4>Image/Media Details</h4>
+<ul>
+<li>Branded stat image: 1200x628px landscape. Dark bg #0D0D0D. Large "80% less time" in FireAI orange.</li>
+<li>Bottom: FireAI logo + "Based on 200+ FireAI clients." One number. Maximum weight. Nothing else.</li>
+</ul>
+</div>
+</div>
+<div class="pc-foot"></div>
+</div>
+</section>
+<hr class="dv"/>
+<!-- ══════════════ DAY 6: SATURDAY ══════════════ -->
+<section class="day-sec" id="day6">
+<div class="day-hdr">
+<div class="day-n">06</div>
+<div class="day-info">
+<h2>Saturday - Personal Story Day</h2>
+<p>Highest organic reach day. Story posts peak Saturday morning.</p>
+</div>
+</div>
+<!-- POST 10 -->
+<div class="pc">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tv">Vipul Personal</span>
+<span class="fp">Founder Story · Failure Post</span>
+</div>
+<span class="pc-time">Saturday · 9:00 AM IST</span>
+</div>
+<div class="pc-body">
+<div class="vipul-img-suggestion" style="display: flex; align-items: flex-start; gap: 12px; background: var(--orange-light); border: 1px dashed var(--orange-border); border-radius: 8px; padding: 12px 14px; margin-bottom: 16px;">
+<div class="vis-photo" style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), #ff8c6d); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 900; color: #fff; flex-shrink: 0; font-family: 'Inter', sans-serif; overflow: hidden;">V</div>
+<div class="vis-content" style="flex: 1;">
+<div class="vis-label" style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px;">Optional Media Suggestion</div>
+<div class="vis-rec" style="font-size: 12.5px; color: var(--text2); line-height: 1.5; font-weight: 500;">Include a personal photo of Vipul (e.g., at the office, candid, or at a whiteboard).</div>
+<div class="vis-note" style="font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4;">Why? Confession and story posts pair best with a human face. It builds trust and significantly boosts engagement on personal accounts.</div>
+</div>
+</div>
+
+<div class="copy">She stopped me 2 minutes into the demo.
+
+"Don't show me a chart. Tell me why my gross margin dropped 3.2% last quarter."
+
+I couldn't.
+
+I showed her a chart anyway.
+
+She thanked me. Said she'd think about it.
+
+She never replied.
+
+That meeting cost us a 14 lakh contract. And 6 months of my confidence.
+
+I replayed it for weeks. What she wanted was not impossible. I just hadn't built it yet.
+
+So we did.
+
+We built Causal Chain. The feature that answers exactly that question. Not what dropped. Why it dropped. In plain English, in under 60 seconds.
+
+Eight months later, I walked into another CFO meeting. Different company, same city. I opened with one question instead of a feature list.
+
+"What is the one business question nobody on your team can answer fast enough?"
+
+She said: "Why our net margin keeps slipping every Q4."
+
+I opened FireAI. We had the answer in 45 seconds.
+
+She signed in the same meeting.
+
+Losing that first deal was the best thing that happened to FireAI.
+
+What's the most expensive question your business still can't answer quickly?</div>
+<div class="brief bro">
+<h4>Image/Media Details</h4>
+<ul><li>If using a photo, ensure it matches the storytelling intent. Candid shots perform best here.</li></ul></div>
+</div>
+<div class="pc-foot"></div>
+</div>
+<!-- POST 11 -->
+<div class="pc blue">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tf">FireAI Page</span>
+<span class="fp">Native Vertical Video · 60 sec</span>
+</div>
+<span class="pc-time">Saturday · 11:00 AM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy">No script. No sample data. No second takes.
+
+We asked FireAI a real business question live:
+
+"Which SKU had the biggest margin drop this month, and why?"
+
+Watch what happens in 60 seconds.
+
+This is what your Monday morning should look like.</div>
+<div class="brief brb">
+<h4>Image/Media Details</h4>
+<ul>
+<li>Native vertical video: 9:16 ratio, 60 seconds max. Upload directly to LinkedIn. Not YouTube.</li>
+<li>Open in the first 2 seconds with the question being typed or spoken. No logo intro. Start with the action.</li>
+<li>Thumbnail: freeze on the exact frame when the answer appears on screen.</li>
+<li>Spec: MP4, 60fps, 9:16. A phone recording works fine.</li>
+</ul>
+</div>
+</div>
+<div class="pc-foot"></div>
+</div>
+</section>
+<hr class="dv"/>
+<!-- ══════════════ DAY 7: SUNDAY ══════════════ -->
+<section class="day-sec" id="day7">
+<div class="day-hdr">
+<div class="day-n">07</div>
+<div class="day-info">
+<h2>Sunday - Engagement + Pre-Announce</h2>
+<p>Warm up comments at 10am. Set the hook for Monday at 7pm.</p>
+</div>
+</div>
+<!-- POST 12 -->
+<div class="pc">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tv">Vipul Personal</span>
+<span class="fp">Engagement · Question Post</span>
+</div>
+<span class="pc-time">Sunday · 10:00 AM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy">Real question. No judgment.
+
+When your team needs to check business data right now, what do they actually open?
+
+A) Excel or Google Sheets - the honest answer for most of us
+B) A proper BI tool: Power BI, Looker, Tableau, or similar
+C) WhatsApp - they message the analyst
+D) They wait for the Monday morning report
+
+We've asked 200+ Indian founders this same question.
+
+The answer that comes up most often surprises people every time.
+
+Drop your letter below. I'll share the full breakdown, plus what the top 20% do differently, on Tuesday.
+
+(I'll reply to everyone personally today.)</div>
+
+</div>
+<div class="pc-foot"></div>
+</div>
+<!-- POST 13 -->
+<div class="pc">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tv">Vipul Personal</span>
+<span class="fp">Pre-Announcement · Short Text</span>
+</div>
+<span class="pc-time">Sunday · 7:00 PM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy raw-copy">
+
+Tomorrow morning I'm sharing something I've been sitting on for 6 months.
+
+We asked 50 Indian founders what frustrated them most about their data setup.
+
+Every single call. The same answer.
+
+We built the fix.
+
+8 AM.</div>
+
+</div>
+<div class="pc-foot"></div>
+</div>
+</section>
+<hr class="dv"/>
+<!-- ══════════════ VIRAL SPIKE POST ══════════════ -->
+<section class="day-sec" id="viral">
+<div class="day-hdr">
+<div class="day-n yn">V</div>
+<div class="day-info">
+<h2 style="color:var(--yellow);">Viral Spike Post - Tuesday 8:30 AM Big Bet</h2>
+<p>Spend 3-4 hours on this one post alone. This is the post that brings followers and fuels the rest.</p>
+</div>
+</div>
+<div class="pc yellow">
+<div class="pc-top">
+<div class="pc-meta">
+<span class="tag tv">Vipul Personal</span>
+<span class="tag ty">Viral Big Bet</span>
+<span class="fp">Carousel PDF · 10 Slides</span>
+</div>
+<span class="pc-time">Tuesday · 8:30 AM IST</span>
+</div>
+<div class="pc-body">
+<div class="copy raw-copy">
+
+We spoke to 200 Indian founders.
+
+67% track their revenue with WhatsApp messages and gut feel.
+
+I was one of them.
+
+Here are 5 data habits killing Indian businesses right now, and what the top 20% do differently.
+
+I spent 6 months on these calls. Swipe through.
+
+Slide 10 has the full guide we built from everything we heard.
+
+Comment "BI" below. I'll send it to you directly.</div>
+<div class="cs">
+<div class="cs-row csh"><div class="cs-cell">#</div><div class="cs-cell">Slide Content</div><div class="cs-cell vis">Visual Direction</div></div>
+<div class="cs-row csy"><div class="cs-cell">1</div><div class="cs-cell">Cover: "We spoke to 200 Indian founders. 67% are doing this wrong."</div><div class="cs-cell vis">Orange bg, white bold headline. No logo on cover. One sentence. Maximum contrast.</div></div>
+<div class="cs-row csy"><div class="cs-cell">2</div><div class="cs-cell">67% track revenue with WhatsApp and gut feel. (Source: 200 founder calls, Q1 2026)</div><div class="cs-cell vis">Dark bg. Huge orange stat. One source line in small grey. Nothing else.</div></div>
+<div class="cs-row csy"><div class="cs-cell">3</div><div class="cs-cell">Habit 1: The Excel Trap. It "almost works" so nobody fixes it. Until it doesn't.</div><div class="cs-cell vis">Yellow-tinted dark bg. Broken spreadsheet icon. One painful sub-line.</div></div>
+<div class="cs-row csy"><div class="cs-cell">4</div><div class="cs-cell">Habit 2: 43% found out about a stock problem only after a customer complaint.</div><div class="cs-cell vis">Dark bg. Blue stat. One short, specific, painful story below.</div></div>
+<div class="cs-row csy"><div class="cs-cell">5</div><div class="cs-cell">Habit 3: The Monday Report is 5 days old by the time you see it.</div><div class="cs-cell vis">Dark bg. Red headline. Fading clock icon. "By the time you read this..."</div></div>
+<div class="cs-row csy"><div class="cs-cell">6</div><div class="cs-cell">Habit 4: Approximately 11L lost monthly from decisions made on delayed data.</div><div class="cs-cell vis">Dark bg. Large yellow rupee stat. Small source note below. One number.</div></div>
+<div class="cs-row csy"><div class="cs-cell">7</div><div class="cs-cell">Habit 5: "I'll ask the analyst." That costs 3-4 hours. Per question. Every time.</div><div class="cs-cell vis">Dark bg. Tired analyst illustration. Timer counting up to 4h.</div></div>
+<div class="cs-row csy"><div class="cs-cell">8</div><div class="cs-cell">What the top 20% do differently: 3 habits that separate them from the 80%.</div><div class="cs-cell vis">Split layout. Left: 80% in grey. Right: 20% in green. Clean contrast.</div></div>
+<div class="cs-row csy"><div class="cs-cell">9</div><div class="cs-cell">5 questions every founder should answer before 10 AM every morning.</div><div class="cs-cell vis">Clean numbered list. Orange numbers. Readable at a glance.</div></div>
+<div class="cs-row csy"><div class="cs-cell">10</div><div class="cs-cell">CTA: "Comment 'BI' below. I'll send you the full 12-page guide directly."</div><div class="cs-cell vis">Dark bg with yellow border. One CTA line only. Big. Uncluttered.</div></div>
+</div>
+
+</div>
+<div class="pc-foot"></div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer>
+<p>FireAI x Vipul · LinkedIn Strategy - Rehan Kadri</p>
+</footer>
+</body>
+</html>
